@@ -38,11 +38,9 @@ def display_python_is(text="is cool"):
 @app.route("/number/<n>", strict_slashes=False)
 def display_number(n):
     """Displays 'n is a number' only if n is an integer"""
-    try:
-        n = int(n)
-        return f"{n} is a number"
-    except ValueError:
-        pass
+
+    return f"{int(n)} is a number"
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
