@@ -40,7 +40,8 @@ def display_n(n):
     try:
         n = int(n)
         return f"{n} is a number"
-
+    except ValueError:
+        return f"{n} is a not number"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
