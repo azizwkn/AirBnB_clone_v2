@@ -40,8 +40,6 @@ def display_n(n):
     try:
         n = int(n)
         return f"{n} is a number"
-    except ValueError:
-        pass
 
 
 if __name__ == "__main__":
