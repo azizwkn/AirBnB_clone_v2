@@ -2,7 +2,7 @@
 
 """starts a Flask web application"""
 
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -39,6 +39,31 @@ def python_is(text="is cool"):
 def is_number(n):
     """Displays 'n is a number' only if n is an integer"""
     return f"{n} is a number"
+
+
+@app.route("/number_template/<int:n>", strict_slashes=False)
+def number_template(n):
+    """
+    Displays an HTML page only if n is an integer.
+
+    Args:
+        n (int): number to be displayed
+    """
+    return render_template("5-number.html", n=n)
+
+
+@app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
+def number_odd_or_even(n):
+    """
+    Displays an HTML page only if n is an integer.
+
+    Args:
+        n (int): number to be displayed
+    """
+    if n % 2 != 0:
+        return render_template("6-number_odd_or_even.html", n=n, result="odd")
+    else:
+        return render_template("6-number_odd_or_even.html", n=n, result="even")
 
 
 if __name__ == "__main__":

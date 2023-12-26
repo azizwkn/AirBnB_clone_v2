@@ -36,13 +36,13 @@ def python_is(text="is cool"):
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def is_num(n):
+def is_number(n):
     """Displays 'n is a number' only if n is an integer"""
     return f"{n} is a number"
 
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
-def num_template(n):
+def number_template(n):
     return render_template("5-number.html", n=n)
 
 
