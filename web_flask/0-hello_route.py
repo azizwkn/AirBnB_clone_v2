@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def start_flask_web_app():
-    """Starts a Flask web app"""
+def hello_hbnb():
+    """Displays hello hbnb"""
     return "Hello HBNB!"
 
 

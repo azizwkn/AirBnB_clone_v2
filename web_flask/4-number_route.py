@@ -9,19 +9,19 @@ app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def display_hello_hbnb():
+def hello_hbnb():
     """Displays hello hbnb"""
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
-def display_hbnb():
+def hbnb():
     """Displays hbnb"""
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def display_c_is(text):
+def c_is(text):
     """Displays c is followed by the value of the text"""
     formatted_text = escape(text).replace("_", " ")
     return f"C {formatted_text}"
@@ -29,14 +29,14 @@ def display_c_is(text):
 
 @app.route("/python/", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def display_python_is(text="is cool"):
+def python_is(text="is cool"):
     """Displays Python is followed by the value of the text"""
     formatted_text = escape(text).replace("_", " ")
     return f"Python {formatted_text}"
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def display_number(n):
+def is_num(n):
     """Displays 'n is a number' only if n is an integer"""
     return f"{n} is a number"
 

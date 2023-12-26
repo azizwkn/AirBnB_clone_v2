@@ -10,19 +10,19 @@ app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def display_hello_hbnb():
+def hello_hbnb():
     """Displays hello hbnb"""
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
-def display_hbnb():
+def hbnb():
     """Displays hbnb"""
     return "HBNB"
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def display_c_is(text):
+def c_is(text):
     """Displays c is followed by the value of the text"""
     formatted_text = escape(text).replace("_", " ")
     return f"C {formatted_text}"
