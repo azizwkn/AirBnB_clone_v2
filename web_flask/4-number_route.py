@@ -35,5 +35,14 @@ def display_python_is(text="is cool"):
     return f"Python {formatted_text}"
 
 
+@app.route("/number/<n>", strict_slashes=False)
+def display_n(n):
+    try:
+        n = int(n)
+        return f"{n} is a number"
+    except ValueError:
+        pass
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
